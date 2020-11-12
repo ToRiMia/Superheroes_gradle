@@ -18,6 +18,10 @@ public class Superhero{
 
     private int age;
 
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "friend_id")
+//    private Friend friend;
+
     @Column(length = 1000)
     private String superPower;
 
@@ -68,4 +72,12 @@ public class Superhero{
     public void setSuperPower(String superPower) {
         this.superPower = superPower;
     }
+
+//    public Friend getFriend() {
+//        return friend;
+//    }
+//
+//    public void setFriend(Friend friend) {
+//        this.friend = friend;
+//    }
 }
