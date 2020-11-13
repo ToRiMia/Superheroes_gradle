@@ -31,7 +31,6 @@ public class SuperheroesController {
     public Superhero update(
             @PathVariable("id") Superhero superheroFromDB,
             @RequestBody Superhero superhero) {
-
         BeanUtils.copyProperties(superhero, superheroFromDB, "id");
         return superheroRepo.save(superheroFromDB);
     }
@@ -42,8 +41,13 @@ public class SuperheroesController {
     }
 
     @GetMapping("top5_friends")
-    public List<Superhero> getTop5() {
+    public List<Superhero> getTop5SuperheroWithFriends() {
         return superheroRepo.getFiveSuperheroesWithTheBiggestAmountsOfFriends();
+    }
+
+    @GetMapping("top5_enemies")
+    public List<Superhero> getTop5SuperheroWithEnemies() {
+        return superheroRepo.getFiveSuperheroesWithTheBiggestAmountsOfEnemies();
     }
 }
 

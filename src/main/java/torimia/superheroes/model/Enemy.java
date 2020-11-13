@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Friend {
+public class Enemy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,15 +13,7 @@ public class Friend {
     @ManyToOne
     private Superhero superhero;
 
-    private String friendName;
-
-    public Friend() {
-    }
-
-    public Friend(Superhero superhero, String friendName) {
-        this.superhero = superhero;
-        this.friendName = friendName;
-    }
+    private String enemyName;
 
     public Long getId() {
         return id;
@@ -31,19 +23,19 @@ public class Friend {
         this.id = id;
     }
 
-    public String getFriendName() {
-        return friendName;
-    }
-
-    public void setFriendName(String friendName) {
-        this.friendName = friendName;
-    }
-
     public Superhero getSuperhero() {
         return superhero;
     }
 
     public void setSuperhero(Superhero superhero) {
         this.superhero = superhero;
+    }
+
+    public String getEnemyName() {
+        return enemyName;
+    }
+
+    public void setEnemyName(String enemyName) {
+        this.enemyName = enemyName;
     }
 }

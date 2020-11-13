@@ -1,5 +1,6 @@
 package torimia.superheroes.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import torimia.superheroes.model.Friend;
 import torimia.superheroes.model.Superhero;
@@ -14,6 +15,7 @@ public class FriendsController {
 
     private final FriendRepo friendRepo;
 
+    @Autowired
     public FriendsController(FriendRepo friendRepo) {
         this.friendRepo = friendRepo;
     }
