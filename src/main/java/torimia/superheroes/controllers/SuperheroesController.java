@@ -32,13 +32,18 @@ public class SuperheroesController {
             @PathVariable("id") Superhero superheroFromDB,
             @RequestBody Superhero superhero) {
 
-        BeanUtils.copyProperties(superhero, superheroFromDB, "id"); //???????????????
+        BeanUtils.copyProperties(superhero, superheroFromDB, "id");
         return superheroRepo.save(superheroFromDB);
     }
 
     @DeleteMapping("{id}")
     public void remove(@PathVariable("id") Superhero superhero) {
         superheroRepo.delete(superhero);
+    }
+
+    @GetMapping("top5_friends")
+    public List<Superhero> getTop5() {
+        return superheroRepo.getFiveSuperheroesWithTheBiggestAmountsOfFriends();
     }
 }
 

@@ -15,4 +15,12 @@ public interface FriendRepo extends JpaRepository<Friend, Long> {
 
     void deleteBySuperheroAndFriendName(Superhero superhero, String friendName);
 
+
+
+//    SELECT superhero.name, COUNT(superhero.id) FROM public.superhero
+//    JOIN public.friend ON (superhero.id = friend.superhero_id)
+//    GROUP BY superhero.name
+//    ORDER BY COUNT(superhero.id) DESC
+//    LIMIT 5
+
 }
